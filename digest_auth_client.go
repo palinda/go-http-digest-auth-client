@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"net/http"
 	"time"
+	"log"
 )
 
 type DigestRequest struct {
@@ -113,7 +114,7 @@ func (dr *DigestRequest) Execute() (resp *http.Response, err error) {
 		return nil, err
 	}
 
-	Printf("Palinda %s", resp)
+	log.Printf("Palinda %s", resp)
 	if resp.StatusCode == 401 {
 		return dr.executeNewDigest(resp)
 	}
