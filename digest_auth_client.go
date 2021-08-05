@@ -170,6 +170,8 @@ func (dr *DigestRequest) executeRequest(authString string) (resp *http.Response,
 	}
 	req.Header = dr.Header
 	req.Header.Add("Authorization", authString)
+	req.Header.Add("Content-Type","application/x-www-form-urlencoded")
+	req.Header.Add("Accept","*/*")
 	log.Printf("New request: %s", req)
 
 	client := dr.getHTTPClient()
