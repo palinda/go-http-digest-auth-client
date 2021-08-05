@@ -160,7 +160,7 @@ func (ah *authorization) toString() string {
 	}
 
 	if ah.Algorithm != "" {
-		buffer.WriteString(fmt.Sprintf("algorithm=%s, ", ah.Algorithm))
+		buffer.WriteString(fmt.Sprintf("algorithm=\"%s\", ", ah.Algorithm))
 	}
 
 	if ah.Cnonce != "" {
