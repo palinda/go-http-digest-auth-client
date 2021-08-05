@@ -114,7 +114,7 @@ func (dr *DigestRequest) Execute() (resp *http.Response, err error) {
 		return nil, err
 	}
 
-	fmt.Println("Hello World!")
+	log.Printf("Palinda %s", resp)
 	if resp.StatusCode == 401 {
 		return dr.executeNewDigest(resp)
 	}
@@ -172,6 +172,5 @@ func (dr *DigestRequest) executeRequest(authString string) (resp *http.Response,
 	req.Header.Add("Authorization", authString)
 
 	client := dr.getHTTPClient()
-	fmt.Println("Request:", req)
 	return client.Do(req)
 }
