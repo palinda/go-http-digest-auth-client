@@ -113,6 +113,7 @@ func (dr *DigestRequest) Execute() (resp *http.Response, err error) {
 		return nil, err
 	}
 
+	Printf("Palinda %s", resp)
 	if resp.StatusCode == 401 {
 		return dr.executeNewDigest(resp)
 	}
